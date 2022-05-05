@@ -1,0 +1,88 @@
+---
+layout: default
+---
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+
+      <h1 class="header center orange-text">{{ site.title }}</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">{{ content }}</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <!-- Icon Section -->
+      <div class="row">
+        <div class="col s12 m6 l6 xl6">
+          <div class="icon-block">
+            <h2 class="center light-blue-text">
+              <a href="{{ site.vfd.app_url }}">
+                <img src="img/google-play-badge.png">
+              </a>
+            </h2>
+            <h5 class="center">VFD Watch Face</h5>
+
+            <p class="light">
+              A Wear OS Watch Face with intentionally pixelated time display part for retro VFD feeling.
+              The ambient mode displays AM/PM indication instead of seconds.
+              The default color scheme is amber-yellow-red-vermilion because some AMOLED's blue color tend to age quicker,
+              thus we may extend the life of the display by going red hue colors
+              (otherwise I'd have gone cyan style to mimick some VFDs better).
+              With v2.0 green and blue color schemes can be selected as well.
+              The layout offers 6 complication slots in two rows: one row is above the center time display and another row is below.
+              All the complication slots are for small data.
+              <a href="{{ site.vfd.src_url }}">Source code</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l6 xl6">
+          <div class="icon-block">
+            <h2 class="center light-blue-text">
+              <a href="{{ site.flower.app_url }}">
+                <img src="img/google-play-badge.png">
+              </a>
+            </h2>
+            <h5 class="center">Flower Complication Watch Face</h5>
+
+            <p class="light">
+              A Wear OS Watch Face is comprised of complications only.
+              The complication slots are all equal size of 1/3rd of the whole watch face and aligned in a flower shape.
+              There are 7 complication slots available this way.
+              It's completely up to you what data you want to display, even including the time.
+              I use an amber / vermilion / yellow / brown / red color scheme by default, avoiding blue which may age faster in some AMOLED displays.
+              However blue and green schemes are available as well.
+              <a href="{{ site.flower.src_url }}">Source code</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div style="background: #ddd">
+    <div class="container last-post">
+      <section>
+        <h5>Tutorial</h5>
+        <ul class="collection">
+        {% for post in site.posts %}
+        <li class="collection-item avatar">
+          {% assign date_format = site.minima.date_format | default: "%m/%d" %}
+          <div class="date-post">{{ post.date | date: date_format }}</div>
+          <span class="title"><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></span>
+          <p>
+             {{ post.content | truncatewords: 10 }}
+          </p>
+          <a href="{{ post.url | relative_url }}" class="secondary-content"><i class="material-icons">navigate_next</i></a>
+        </li>
+        {% endfor %}
+        </ul>  
+      </section>
+    </div>
+  </div>
+
+</div>
